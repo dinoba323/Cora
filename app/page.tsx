@@ -1,30 +1,29 @@
-const usluge = [
-  "Projektovanje",
-  "Revizija projektne dokumentacije",
-  "Nadzor",
-  "Enterijer",
-];
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="flex flex-1 flex-col justify-center gap-10 px-6 py-16 mx-auto w-full max-w-3xl">
-      <header className="flex flex-col gap-3">
-        <h1 className="text-5xl font-semibold tracking-tight">CORA</h1>
-        <p className="text-lg opacity-70">CORA d.o.o. Sarajevo</p>
-      </header>
+    <main className="flex flex-1 flex-col items-center justify-center gap-12 px-6 py-16 text-center">
+      <Image
+        src="/logo-cora-bijeli.png"
+        alt="CORA"
+        width={1600}
+        height={386}
+        priority
+        className="h-auto w-full max-w-[min(70vw,28rem)]"
+      />
 
-      <ul className="flex flex-col gap-2 text-xl">
-        {usluge.map((usluga) => (
-          <li key={usluga}>{usluga}</li>
-        ))}
-      </ul>
-
-      <footer className="flex flex-col gap-1 opacity-70">
+      <address className="flex flex-col gap-1 text-sm not-italic leading-relaxed text-neutral-300">
+        <p className="font-medium text-white">CORA d.o.o. Sarajevo</p>
+        <p>Projektovanje, revizija projektne dokumentacije, nadzor, enterijer</p>
         <p>Juraja Najtharta 17, Sarajevo</p>
-        <a className="underline" href="mailto:info@cora.ba">
+        <p>ID broj: 4203305110003</p>
+        <a
+          className="mt-3 text-white underline underline-offset-4"
+          href="mailto:info@cora.ba"
+        >
           info@cora.ba
         </a>
-      </footer>
+      </address>
     </main>
   );
 }
